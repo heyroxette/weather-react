@@ -1,0 +1,22 @@
+.Weather .weather-forecast {
+  padding-top: 20px;
+  white-space: nowrap;
+}
+.Weather .weather-forecast-date {
+  font-family: "Dosis", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+.Weather .weather-forecast-temperature {
+  font-family: "Work Sans", sans-serif;
+}
+
+.Weather .weather-forecast-temperature-max {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.Weather .weather-forecast-temperature-min {
+  font-size: 12px;
+  opacity: 0.7;
+}
