@@ -6,6 +6,7 @@ function App() {
     <div className="App">
       <div className="card">
         <div className="card-body">
+          <h1>Weather App</h1>
           <div className="form-group">
             <Weather defaultCity="Toronto" />
           </div>
