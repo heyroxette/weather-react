@@ -10,25 +10,25 @@ function App() {
             <Weather defaultCity="Toronto" />
           </div>
         </div>
+        <footer>
+          <a
+            href="https://github.com/heyroxette/weather-react"
+            target="blank"
+            rel="noopener noreferrer"
+          >
+            {" "}
+            Open source code{" "}
+          </a>{" "}
+          by{" "}
+          <a
+            href="https://www.shecodes.io/students/415-roxette-garcia"
+            target="blank"
+            rel="noopener noreferrer"
+          >
+            Roxette Garcia
+          </a>
+        </footer>
       </div>
-      <footer>
-        <a
-          href="https://github.com/heyroxette/weather-react"
-          target="blank"
-          class="source-code"
-        >
-          {" "}
-          Open source code{" "}
-        </a>{" "}
-        by{" "}
-        <a
-          href="https://www.shecodes.io/students/415-roxette-garcia"
-          target="blank"
-          class="name"
-        >
-          Roxette Garcia
-        </a>{" "}
-      </footer>
     </div>
   );
 }

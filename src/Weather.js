@@ -4,43 +4,37 @@ import ReactAnimatedWeather from "react-animated-weather";
 
 import "./Weather.css";
 
-export default function Weather(props) {
-  const [weatherData, setWeatherData] = useState({ready:false});
-  const [city, setCity] = useState(props.defaultCity);
-  
+export default function Weather() {
+  let [city, setCity] = useState(null);
+  let [temperature, setTemperature] = useState("");
+  let [description, setDescription] = useState("");
+  let [humidity, setHumidity] = useState("");
+  let [wind, setWind] = useState("");
+  let [icon, setIcon] = useState("");
+  let [message, setMessage] = useState(false);
 
   function displayForecast(response) {
-   setWeatherData ({
-     city: response.data.name,
-     date: "Monday, 10:30",
-     description: response.data.weather[0].description,
-     temperature: response.data.main.temp,
-     highest: response.data.main.temp_max,
-     lowest: response.data.main.temp_min,
-     windspeed:(response.data.wind.speed),
-   });
+    setMessage(true);
+    setTemperature(response.data.main.temp);
+    setDescription(response.data.weather[0].description);
+    setHumidity(response.data.main.humidity);
+    setWind(response.data.wind.speed);
+    setIcon(response.data.weather[0].icon);
   }
 
   function citySearch(event) {
     event.preventDefault();
-    search();
-  }
-
-  function handleCity(event) {
-    setCity(event.target.value);
-  }
-
-  function search() {
-    
     let apiKey = "e0346efbac786e6f2f5f0a80627da715";
     let units = "metric";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
     axios.get(url).then(displayForecast);
   }
 
-  
-  
-if (weatherData.ready) {
+  function handleCity(event) {
+    event.preventDefault();
+    setCity(event.target.value);
+  }
+
   return (
     <div className="Weather">
       <form onSubmit={citySearch}>
@@ -57,28 +51,20 @@ if (weatherData.ready) {
         <input type="submit" value="°F" className="btn btn-light" />
       </form>
 
-      <h1>{props.data.city}</h1>
-      <h2>{weatherData.date}</h2>
-      <h3>{weatherData.description}</h3>
-
-      <h4>
-        {Math.round(weatherData.temperature)} °C{" "}
-        <span className="weather-image">
-          <ReactAnimatedWeather
-            icon="CLEAR_DAY"
-            color="black"
-            size="60"
-            animate="true"
-          />
-        </span>
-      </h4>
-
-      <h5>
-        High: {Math.round(weatherData.highest)} Low:{" "}
-        {Math.round(weatherData.lowest)}
-        <div className="windspeed">Windspeed: {weatherData.windspeed}</div>
-      </h5>
+      {message && (
+        <ul className="forecast">
+          <li>Temperature: {Math.round(temperature)}°C</li>
+          <li>Description: {description}</li>
+          <li>Humidity: {humidity}</li>
+          <li>Wind: {wind}</li>
+          <li>
+            <img
+              src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
+              alt={description}
+            />
+          </li>
+        </ul>
+      )}
     </div>
   );
-}
 }
