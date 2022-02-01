@@ -13,22 +13,24 @@ function App() {
           </div>
         </div>
         <footer>
+          <p>This app was coded by{" "}
+          <a
+            href="https://roxette-garcia.netlify.app/"
+            target="blank"
+            rel="noopener noreferrer"
+          >
+            Roxette Garcia
+          </a>{" "}
+           and is
           <a
             href="https://github.com/heyroxette/weather-react"
             target="blank"
             rel="noopener noreferrer"
           >
             {" "}
-            Open source code{" "}
-          </a>{" "}
-          by{" "}
-          <a
-            href="https://www.shecodes.io/students/415-roxette-garcia"
-            target="blank"
-            rel="noopener noreferrer"
-          >
-            Roxette Garcia
+            open source code on Github
           </a>
+          </p>
         </footer>
       </div>
     </div>
