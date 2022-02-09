@@ -14,7 +14,7 @@ export default function Weather() {
   let [message, setMessage] = useState(false);
 
   function displayForecast(response) {
-    setMessage(true);
+    
     setTemperature(response.data.main.temp);
     setDescription(response.data.weather[0].description);
     setHumidity(response.data.main.humidity);
@@ -47,12 +47,11 @@ export default function Weather() {
           onChange={handleCity}
         />
         <input type="submit" value="Search" className="btn btn-light" />
-        <input type="submit" value="📍" className="btn btn-light" />
-        <input type="submit" value="°F" className="btn btn-light" />
+       
       </form>
 
       <div className="forecast">
-        <h1>TORONTO</h1>
+        <h1>{city}Toronto</h1>
         <h2>Monday, 12:00</h2>
         <h3>{description}</h3>
 
@@ -67,14 +66,22 @@ export default function Weather() {
           </span>
         </h4>
 
-        <h5>
-          <ul>
-            <li> High: 10° </li>
-            <li> Low: 5° </li>
-            <li> Windspeed: {Math.round(wind)} </li>
-          </ul>
+        <h5 className="mt-2">
+          <div className="row">
+            <div className="col-6">
+              <ul>
+                <li> Highest: 10° </li>
+                <li> Lowest: 5° </li>
+              </ul>
+            </div>
+            <div className="col-6">
+              <ul>
+                <li> Windspeed: {Math.round(wind)} </li>
+                <li> Humidity: {humidity} </li>
+              </ul>
+            </div>
+          </div>
         </h5>
-
       </div>
     </div>
   );
