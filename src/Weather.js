@@ -40,7 +40,7 @@ export default function Weather() {
       <form onSubmit={citySearch}>
         <input
           type="search"
-          placeholder="Enter City..."
+          placeholder="Enter a city..."
           autoComplete="off"
           autofocus="on"
           className="text-box"
@@ -51,20 +51,31 @@ export default function Weather() {
         <input type="submit" value="°F" className="btn btn-light" />
       </form>
 
-      {message && (
-        <ul className="forecast">
-          <li>Temperature: {Math.round(temperature)}°C</li>
-          <li>Description: {description}</li>
-          <li>Humidity: {humidity}</li>
-          <li>Wind: {wind}</li>
-          <li>
+      <div className="forecast">
+        <h1>TORONTO</h1>
+        <h2>Monday, 12:00</h2>
+        <h3>{description}</h3>
+
+        <h4>
+          <span> {Math.round(temperature)} </span>
+          <span> °C </span>
+          <span>
             <img
               src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
               alt={description}
             />
-          </li>
-        </ul>
-      )}
+          </span>
+        </h4>
+
+        <h5>
+          <ul>
+            <li> High: 10° </li>
+            <li> Low: 5° </li>
+            <li> Windspeed: {Math.round(wind)} </li>
+          </ul>
+        </h5>
+
+      </div>
     </div>
   );
 }

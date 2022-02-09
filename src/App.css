@@ -37,10 +37,22 @@ h5 {
   padding-bottom: 10px;
 }
 
+ul {
+  list-style-type: none;
+}
+
 p {
   font-size: 14px;
   font-family: "Work Sans", sans-serif;
   padding-top: 15px;
+}
+
+footer a {
+  color: white;
+}
+
+footer a:hover {
+  color: orangered;
 }
 
 .App {
