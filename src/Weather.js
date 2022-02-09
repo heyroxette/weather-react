@@ -11,7 +11,7 @@ export default function Weather() {
   let [humidity, setHumidity] = useState("");
   let [wind, setWind] = useState("");
   let [icon, setIcon] = useState("");
-  let [message, setMessage] = useState(false);
+  
 
   function displayForecast(response) {
     
