@@ -29,7 +29,7 @@ return (
         </div>
         <div className="col-6">
           <ul>
-            <li> Windspeed: {Math.round(props.data.wind)} </li>
+            <li> Windspeed: {Math.round(props.data.wind)} km/h </li>
             <li> Humidity: {props.data.humidity}% </li>
           </ul>
         </div>
