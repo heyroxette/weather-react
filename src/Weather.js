@@ -18,7 +18,7 @@ const [city, setCity] = useState(props.defaultCity);
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       temperature: response.data.main.temp,
-      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       highest: response.data.main.temp_max,
       lowest: response.data.main.temp_min,
       wind: response.data.wind.speed,
