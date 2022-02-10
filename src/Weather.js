@@ -43,6 +43,8 @@ const [city, setCity] = useState(props.defaultCity);
      setCity(event.target.value);
    }
 
+   
+
   if (weatherData.ready) {
     return (
       <div className="Weather">
@@ -55,7 +57,7 @@ const [city, setCity] = useState(props.defaultCity);
             className="text-box"
             onChange={handleCitySearch}
           />
-          <input type="submit" value="Search" className="btn btn-light" />
+          <input type="submit" value="Search" className="btn btn-light" /> 
         </form>
 
         <WeatherInfo data={weatherData} />
