@@ -11,7 +11,7 @@ return (
     <h2>
       <FormattedDate date={props.data.date} />
     </h2>
-    <h3>{props.data.description}</h3>
+    <h3 className="mb-3">{props.data.description}</h3>
 
     <h4>
       <WeatherTemperature celsius={props.data.temperature}/>
@@ -22,16 +22,10 @@ return (
 
       </span>
     </h4>
-
-    <h5 className="mt-2">
+  
+    <h5 className="mt-3">
       <div className="row">
-        <div className="col-6">
-          <ul>
-            <li> Highest: {Math.round(props.data.highest)}° </li>
-            <li> Lowest: {Math.round(props.data.lowest)}° </li>
-          </ul>
-        </div>
-        <div className="col-6">
+        <div className="col">
           <ul>
             <li> Windspeed: {Math.round(props.data.wind)} km/h </li>
             <li> Humidity: {props.data.humidity}% </li>

@@ -1,9 +1,13 @@
+
+
 .WeatherForecast-day {
-  font-size: 15px;
+  font-size: 14px;
+  font-family: "Work Sans", sans-serif;
 }
+  
 
 .WeatherForecast-temperature {
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .WeatherForecast-temperature-min {
