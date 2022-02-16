@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 
 import axios from "axios";
 import "./Weather.css";
@@ -57,10 +58,12 @@ const [city, setCity] = useState(props.defaultCity);
             className="text-box"
             onChange={handleCitySearch}
           />
-          <input type="submit" value="Search" className="btn btn-light" /> 
+          <input type="submit" value="Search" className="btn btn-light" />
+
         </form>
 
         <WeatherInfo data={weatherData} />
+        <WeatherForecast />
       </div>
     );
   } else {

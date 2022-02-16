@@ -18,7 +18,7 @@ return (
       
       <span>
 
-        <WeatherIcon code={props.data.icon} />
+        <WeatherIcon code={props.data.icon} size={60} />
 
       </span>
     </h4>
