@@ -1,3 +1,11 @@
+.WeatherForecast-day {
+  font-size: 15px;
+}
+
+.WeatherForecast-temperature {
+  font-size: 14px;
+}
+
 .WeatherForecast-temperature-min {
   opacity: 0.6;
   margin-left: 3px;
